@@ -5,6 +5,7 @@
 import time	
 import Driver as LCD	
 from datetime import datetime
+import GetWeatherData as Data
 LCD.setup()
 #Clear screen 
 LCD.clear()
@@ -17,7 +18,11 @@ while True:
 	#Display City, State and tempeture
 	
 	#Display weather data and message
-	LCD.write("Hello world",LCD.LINE_1)
+	
+	LCD.write(Data.CITY,LCD.LINE_1)
+	LCD.write(str(Data.temp_f) + " degrees",LCD.LINE_2)
+	
+	time.sleep(1)
 
 
 LCD.clear()
