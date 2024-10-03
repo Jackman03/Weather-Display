@@ -1,15 +1,20 @@
 #Jackson Vaughn
 import os
 import requests
-from dotenv import load_dotenv, dotenv_values 
+from dotenv import load_dotenv, dotenv_values
+import time
 # loading variables from .env file
 load_dotenv() 
 KEY = os.getenv('KEY')
-CITY = 'London'
+CITY = 'Orlando'
 URL = f'https://api.weatherapi.com/v1/current.json?key={KEY}&q={CITY}'
 
-response = requests.get(URL).json()
+def GetTemp():
+	
+	response = requests.get(URL).json()
 
-#print(response)
+	#print(response)
 
-temp_f = response['current']['temp_f']
+	temp_f = response['current']['temp_f']
+	
+	return temp_f
