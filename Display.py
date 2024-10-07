@@ -13,8 +13,6 @@ LCD.clear()
 try:
 	while True:
 		
-		#Display Current city and temperature
-		#we need to recall the weather every 10 minuets
 		CurTemp = Data.GetTemp()
 		LCD.write(Data.CITY,LCD.LINE_1)
 		LCD.write(str(CurTemp) + " degrees",LCD.LINE_2)
@@ -23,7 +21,7 @@ try:
 		#Display date & time in 5 sec range
 		for i in range(5):
 			now = datetime.now()
-			Curdate = str(now.strftime("%d-%m-%Y"))
+			Curdate = str(now.strftime("%m-%d-%Y"))
 			Curtime = str(now.strftime("%H:%M:%S"))
 			LCD.write(Curdate,LCD.LINE_1)
 			LCD.write(Curtime,LCD.LINE_2)

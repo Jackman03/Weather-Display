@@ -13,7 +13,7 @@ def GetTemp():
 	
 	response = requests.get(URL).json()
 
-	#print(response)
+	#time.sleep(10000)
 
 	temp_f = response['current']['temp_f']
 	
